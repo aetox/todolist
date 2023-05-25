@@ -1,6 +1,6 @@
 <div class="todolist">
     <app-todolist-search-bar />
     <div class="todolist__item-list">
-        <app-todolist-item />
+        <app-todolist-item *ngFor="let todo in todos"/>
     </div>
 </div>

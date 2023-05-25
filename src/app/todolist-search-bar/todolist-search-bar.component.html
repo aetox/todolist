@@ -1,5 +1,5 @@
 <div class="content">
-    <input type="text" pInputText formControlName="text" placeholder="Ajouter une todo"/>
-    <p-button icon="pi pi-check"></p-button>
+    <input type="text" pInputText formControlName="text" placeholder="Ajouter une todo" #todo/>
+    <p-button icon="pi pi-check" (onClick)="addTodo(todo.value)"></p-button>
 </div>
 
