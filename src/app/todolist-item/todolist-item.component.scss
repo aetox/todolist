@@ -1,0 +1,17 @@
+.content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+
+.content p {
+
+    margin-left: 15px;
+}
+
+.content .button_group button {
+    display: none;
+}
+
