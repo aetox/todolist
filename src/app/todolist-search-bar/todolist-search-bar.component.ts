@@ -1,8 +1,7 @@
-import { Component, Inject } from '@angular/core';
+import { Component, EventEmitter, Inject, Injectable, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
-
 
 
 @Component({
@@ -16,12 +15,15 @@ import { InputTextModule } from 'primeng/inputtext';
 
 export class TodolistSearchBarComponent {
 
-   public todos:any[]=[];
- 
-  addTodo(title:string){
-    console.log(title)
-    this.todos.push({id:this.todos.length,name:title});
-    console.log(this.todos);
+  @Output() public todosTab = new EventEmitter()
 
+  public todos:any[]=[];
+  private taskIdCounter = 0; // Add this line
+
+     
+  addTodo(title:string){
+    this.todos.push({id:this.taskIdCounter++, name:title}); // Use taskIdCounter instead of this.todos.length
+    // Emit the event with the updated todos array
+    this.todosTab.emit(this.todos);
   }
 }

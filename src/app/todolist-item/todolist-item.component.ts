@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { CommonModule, NgFor } from '@angular/common';
 import { ButtonModule } from 'primeng/button';
 
@@ -10,5 +10,14 @@ import { ButtonModule } from 'primeng/button';
   styleUrls: ['./todolist-item.component.scss']
 })
 export class TodolistItemComponent {
+  @Input() todo: any;
+  @Output() delete = new EventEmitter<number>();
+
+  deleteTask(id: number) {
+    this.delete.emit(id);
+    
+  }
+
 
 }
+

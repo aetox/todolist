@@ -16,5 +16,13 @@ import { TodolistItemComponent } from '../todolist-item/todolist-item.component'
 })
 export class TodolistComponent {
   
+  public todos : any[] = []; // je suppose que todo est un objet, pas un TodolistComponent
 
+  updateTodos(todos: any[]) {
+    this.todos = todos;
+  }
+
+  deleteTodo(id: number) {
+    this.todos = this.todos.filter(todo => todo.id !== id);
+  }
 }

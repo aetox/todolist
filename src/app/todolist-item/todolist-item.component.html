@@ -1,7 +1,7 @@
 <div class="content">
-    <p>Bruhs</p>
+    <p>{{todo.name}}</p>
     <div class="button_group">
-        <p-button icon="pi pi-pencil" styleClass="p-button-rounded p-button-text"></p-button>
-        <p-button icon="pi pi-trash"  styleClass="p-button-rounded p-button-danger p-button-text"></p-button>
+      <p-button icon="pi pi-pencil" styleClass="p-button-rounded p-button-text"></p-button>
+      <p-button icon="pi pi-trash"  styleClass="p-button-rounded p-button-danger p-button-text" (click)="deleteTask(todo.id)"></p-button>
     </div>
-</div>
+  </div>
