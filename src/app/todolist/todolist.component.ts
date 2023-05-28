@@ -15,14 +15,22 @@ import { TodolistItemComponent } from '../todolist-item/todolist-item.component'
   styleUrls: ['./todolist.component.scss']
 })
 export class TodolistComponent {
-  
-  public todos : any[] = []; // je suppose que todo est un objet, pas un TodolistComponent
+
+  private taskIdCounter = 0; // Add this line
+  public todos : any[] = []; 
 
   updateTodos(todos: any[]) {
     this.todos = todos;
   }
 
+  addTodo(title:string){
+    this.todos.push({id:this.taskIdCounter++, name:title}); // Use taskIdCounter instead of this.todos.length
+    console.log(this.todos)
+  }
+
+
   deleteTodo(id: number) {
     this.todos = this.todos.filter(todo => todo.id !== id);
+    console.log(this.todos);
   }
 }

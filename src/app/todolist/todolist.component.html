@@ -1,5 +1,5 @@
 <div class="todolist">
-    <app-todolist-search-bar (todosTab)="updateTodos($event)"></app-todolist-search-bar>
+    <app-todolist-search-bar (add)="addTodo($event)"></app-todolist-search-bar>
     <div class="todolist__item-list" >
         <app-todolist-item *ngFor="let todo of todos" [todo]="todo" (delete)="deleteTodo($event)"></app-todolist-item>
     </div>
