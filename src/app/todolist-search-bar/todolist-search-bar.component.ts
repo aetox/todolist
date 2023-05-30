@@ -22,5 +22,6 @@ export class TodolistSearchBarComponent {
 
   addTodo(title:string){
     this.add.emit(title);
+    
   }
 }

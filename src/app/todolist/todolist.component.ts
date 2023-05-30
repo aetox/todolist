@@ -18,9 +18,20 @@ export class TodolistComponent {
 
   private taskIdCounter = 0; // Add this line
   public todos : any[] = []; 
+  
 
   updateTodos(todos: any[]) {
     this.todos = todos;
+  }
+
+  updateTodo(id: number, titleUpdate :string){
+    let todo = this.todos.find(todo => todo.id === id);
+    if (todo) {
+      todo.name = titleUpdate;
+      console.log(todo.name)
+    } else {
+      console.error('Todo not found');
+    }
   }
 
   addTodo(title:string){

@@ -11,7 +11,19 @@
     margin-left: 15px;
 }
 
-.content .button_group button {
+#updateInput {
+    margin: 15px;
+    height: 30px;
+    width: 175px;}
+
+.button_group {
+    display: flex;
+}
+
+#updateInput.hidden, #updateBtn.hidden, #editBtn.hidden, #title.hidden, #deleteBtn.hidden, #cancelBtn.hidden {
     display: none;
 }
 
+#updateInput, #updateBtn, #editBtn, #title, #deleteBtn, #cancelBtn {
+    display: block;
+}
