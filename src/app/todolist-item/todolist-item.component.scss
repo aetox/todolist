@@ -3,13 +3,37 @@
     align-items: center;
     justify-content: space-between;
     position: relative;
+    margin-bottom: 10px;  /* Add some margin to make room for the separator line */
 }
 
+.content:before {
+    content: '';
+    position: absolute;
+    left: 10%;  /* Adjust this to center the line */
+    bottom: 0;
+    width: 80%;
+    border-bottom: 0.5px solid lightgray; /* Adjust color and thickness here */
+}
 
+:host(.last) .content:before {
+    border-bottom: none;
+}
 .content p {
-
     margin-left: 15px;
+    word-wrap: break-word;  /* Break long words onto the next line */
+    max-width: 80%;  /* Prevent the title from taking up too much space */
 }
+
+.hidden-button {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s linear;
+  }
+  
+  .content:hover .hidden-button {
+    visibility: visible;
+    opacity: 1;
+  }
 
 #updateInput {
     margin: 15px;

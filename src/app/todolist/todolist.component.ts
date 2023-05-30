@@ -18,6 +18,7 @@ export class TodolistComponent {
 
   private taskIdCounter = 0; // Add this line
   public todos : any[] = []; 
+  i: any;
   
 
   updateTodos(todos: any[]) {

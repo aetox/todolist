@@ -1,10 +1,10 @@
 <div class="content">
   <p id="title" [class.hidden]="isEditing">{{todo.name}}</p>
-  <input pInputText id="updateInput" [class.hidden]="!isEditing" type="text" value="{{todo.name}}" #todoInput >
+  <input pInputText id="updateInput" [class.hidden]="!isEditing" type="text" value="{{todo.name}}" #todoInput (keyup.enter)="updateTodo(todo.id,todoInput.value)" (keyup.esc)="displayInput()">
   <div class="button_group">
-    <p-button icon="pi pi-check" id="updateBtn" [class.hidden]="!isEditing" styleClass="p-button-rounded p-button-text" (click)="updateTodo(todo.id,todoInput.value)"></p-button>
-    <p-button icon="pi pi-times" id="cancelBtn" [class.hidden]="!isEditing" styleClass="p-button-rounded p-button-text" (click)="displayInput()"></p-button>
-    <p-button icon="pi pi-pencil" id="editBtn" [class.hidden]="isEditing" styleClass="p-button-rounded p-button-text" (click)="displayInput()"></p-button>
-    <p-button icon="pi pi-trash" id="deleteBtn" [class.hidden]="isEditing" styleClass="p-button-rounded p-button-danger p-button-text" (click)="deleteTask(todo.id)"></p-button>
+    <p-button icon="pi pi-check" id="updateBtn" [class.hidden]="!isEditing" styleClass="p-button-rounded p-button-text hidden-button" (click)="updateTodo(todo.id,todoInput.value)"></p-button>
+    <p-button icon="pi pi-times" id="cancelBtn" [class.hidden]="!isEditing" styleClass="p-button-rounded p-button-text hidden-button" (click)="displayInput()"></p-button>
+    <p-button icon="pi pi-pencil" id="editBtn" [class.hidden]="isEditing" styleClass="p-button-rounded p-button-text hidden-button" (click)="displayInput()"></p-button>
+    <p-button icon="pi pi-trash" id="deleteBtn" [class.hidden]="isEditing" styleClass="p-button-rounded p-button-danger p-button-text hidden-button" (click)="deleteTask(todo.id)"></p-button>
   </div>
 </div>
