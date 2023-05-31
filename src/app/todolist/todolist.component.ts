@@ -16,10 +16,12 @@ import { TodolistItemComponent } from '../todolist-item/todolist-item.component'
 })
 export class TodolistComponent {
 
-  private taskIdCounter = 0; // Add this line
+  private taskIdCounter = 0;
   public todos : any[] = []; 
-  i: any;
   
+  public get todosLength(): number {
+    return this.todos.length;
+  }
 
   updateTodos(todos: any[]) {
     this.todos = todos;
@@ -36,10 +38,9 @@ export class TodolistComponent {
   }
 
   addTodo(title:string){
-    this.todos.push({id:this.taskIdCounter++, name:title}); // Use taskIdCounter instead of this.todos.length
+    this.todos.push({id:this.taskIdCounter++, name:title});
     console.log(this.todos)
   }
-
 
   deleteTodo(id: number) {
     this.todos = this.todos.filter(todo => todo.id !== id);

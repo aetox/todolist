@@ -1,6 +1,7 @@
 <div class="todolist">
     <app-todolist-search-bar (add)="addTodo($event)"></app-todolist-search-bar>
     <div class="todolist__item-list" >
+        <p>Nombre de taches : {{todosLength}}</p>
         <app-todolist-item *ngFor="let todo of todos.reverse(); let i = index"
                             [ngClass]="{'last': i === (todos.length - 1)}" 
                             [todo]="todo" 
