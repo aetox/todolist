@@ -1,5 +1,5 @@
 <div class="content">
-  <p id="title" [class.hidden]="isEditing">{{todo.name}}</p>
+  <p id="title" [class.hidden]="isEditing" (click)="displayInput()">{{todo.name}}</p>
   <input pInputText id="updateInput" [class.hidden]="!isEditing" type="text" value="{{todo.name}}" #todoInput (keyup.enter)="updateTodo(todo.id,todoInput.value)" (keyup.esc)="displayInput()">
   <div class="button_group">
     <p-button icon="pi pi-check" id="updateBtn" [class.hidden]="!isEditing" styleClass="p-button-rounded p-button-text hidden-button" (click)="updateTodo(todo.id,todoInput.value)"></p-button>
